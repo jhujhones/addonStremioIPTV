@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "addon.js"
+      "dest": "/addon.js"
     }
   ]
 }

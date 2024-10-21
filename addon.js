@@ -1,6 +1,5 @@
-const { addonBuilder, serveHTTP } = require("stremio-addon-sdk");
+const { addonBuilder } = require("stremio-addon-sdk");
 const axios = require('axios');
-const net = require('net');
 
 let cachedChannels = null;
 let cachedCategories = null;
@@ -142,12 +141,5 @@ builder.defineStreamHandler(async function(args) {
     return { streams: [] };
 });
 
-// Iniciar o servidor na porta fornecida pelo Vercel ou uma porta padrão
-const port = process.env.PORT || 7000;
-
-getIPTVList().then(() => {
-    serveHTTP(builder.getInterface(), { port: port });
-    console.log(`Addon iniciado na porta ${port}`);
-}).catch(err => {
-    console.error('Erro ao carregar categorias:', err);
-});
+// Exportar o addon para o Vercel
+module.exports = builder.getInterface();
