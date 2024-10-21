@@ -1,0 +1,17 @@
+{
+  "name": "teste-addon-iptv",
+  "version": "1.0.0",
+  "main": "addon.js",
+  "scripts": {
+    "start": "node addon.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "stremio-addon-sdk": "^1.6.10"
+  }
+}
